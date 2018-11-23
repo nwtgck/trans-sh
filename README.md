@@ -15,3 +15,12 @@ Here is an example to send `./myfile1`.
 ```sh
 ./trans myfile1
 ```
+
+## Install
+
+Type as follows to install `./trans`.
+
+```sh
+wget https://raw.githubusercontent.com/nwtgck/trans-sh/develop/trans
+chmod +x trans
+```

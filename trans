@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+# Define trans-server URL
+trans_server_url="https://trans.cf"
+
+# Check whether `curl` is installed or not
+if builtin command -v curl > /dev/null ; then
+ :
+else
+  echo "Error: curl command should be installed" > /dev/stderr
+  exit 1
+fi
+
+# Get file path
+file_path=${1:-/dev/stdin}
+
+# If the file does not exist
+if [ ! -e $file_path ] ; then
+  echo "Error: File not found: '$file_path'"
+  exit 1
+fi
+
+# Send the file
+curl -T $file_path $trans_server_url
